@@ -15,7 +15,9 @@
     mode: "0664"
 
 - name: "Adding UFW rules"
-  ansible.builtin.import_tasks: "roles/common/tasks/debian/os/ufw.yml"
+  ansible.builtin.import_role:
+    name: "common"
+    tasks_from: "debian/os/ufw"
   vars:
     rules:
       - {rule: "allow", name: "OpenSSH", comment: "Allow OpenSSH for All"}
