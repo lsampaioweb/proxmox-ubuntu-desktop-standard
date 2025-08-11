@@ -18,3 +18,4 @@ crash.log
 *.terraform*
 *.tfstate*
 .vscode/
+.ansible

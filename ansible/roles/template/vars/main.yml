@@ -1,0 +1,31 @@
+---
+# Fail2ban configuration path.
+fail2ban:
+  # A list of Fail2ban jail configurations to deploy.
+  # This makes it easy to add new rules in the future.
+  jails:
+    - { src: "fail2ban-ssh.conf", dest: "/etc/fail2ban/jail.d/ssh.conf" }
+
+# UFW (Firewall) configuration.
+ufw:
+  # The default policies for incoming and outgoing traffic.
+  default_incoming_policy: "deny"
+  default_outgoing_policy: "allow"
+
+  # A list of firewall rules to apply.
+  rules:
+    - { rule: "allow",
+        name: "OpenSSH",
+        comment: "Allow remote administration via SSH."
+    }
+    - { rule: "allow",
+        proto: "tcp",
+        to_port: "8100:8200",
+        src: "192.168.100.0/28",
+        comment: "Cloud-Init: Allow access to user-data ports (8100-8200) from Packer VLAN only"
+    }
+    - { rule: "allow",
+        proto: "tcp",
+        to_port: "3389",
+        comment: "Allow remote desktop connections from all internal networks"
+    }
