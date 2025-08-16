@@ -24,10 +24,9 @@ apt_packages:
   - {name: "uuid"} # Generates Universally Unique Identifiers (UUIDs).
   # Development Tools - Tools for development and Python-related functionality.
   - {name: "git"} # Version control system for tracking changes in source code.
-  - {name: "pipx"} # Installs and runs Python apps in isolated environments.
-  - {name: "python3-psutil"} # Retrieves system/process info; required by community.general.dconf.
-  - {name: "python3-passlib"} # Password hashing library with bcrypt support.
-  - {name: "python3-jmespath"} # Queries JSON data using JMESPath expressions.
+  # Note: pipx and python3-* packages inherited from server-raw foundation
+  # File System & Permissions - Advanced file management
+  - {name: "acl"} # Advanced file system permissions for development projects
   # Specialized Tools - Additional tools for specific tasks.
   - {name: "nikto"} # Web server scanner for detecting vulnerabilities.
   - {name: "restic"} # Efficient and secure backup program.
