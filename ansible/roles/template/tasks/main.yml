@@ -7,6 +7,9 @@
 - name: "Installing required packages"
   ansible.builtin.import_tasks: "installing-packages.yml"
 
+- name: "Setting up unlock-keyring"
+  ansible.builtin.import_tasks: "unlock-keyring.yml"
+
 - name: "Setting up the Firewall UFW"
   ansible.builtin.import_tasks: "ufw.yml"
 
