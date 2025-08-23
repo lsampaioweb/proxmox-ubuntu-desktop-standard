@@ -10,13 +10,6 @@ Project with Ansible scripts to create an Ubuntu Desktop template on Proxmox fro
 
 1. Run the playbooks as needed:
 
-    1. Virtualbox VM:
-
-        Install and setup application.
-        ```bash
-        ansible-playbook localhost.yml
-        ```
-
     1. Proxmox VM:
 
         Install and setup application.
@@ -27,6 +20,16 @@ Project with Ansible scripts to create an Ubuntu Desktop template on Proxmox fro
         Setup VM settings on Proxmox.
         ```bash
         ansible-playbook kvm_setup.yml -e "node=edge-pve-01 vm_name=ubuntu-24-04-desktop-standard"
+        ```
+
+    1. Virtualbox VM:
+
+        **Explanation of Flags:**
+        - `-K` - Prompts for the **sudo password** to execute tasks as root.
+
+        Install and setup application.
+        ```bash
+        ansible-playbook localhost.yml -K
         ```
 
 #
