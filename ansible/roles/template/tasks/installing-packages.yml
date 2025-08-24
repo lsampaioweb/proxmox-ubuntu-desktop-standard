@@ -39,8 +39,6 @@
   ansible.builtin.import_role:
     name: "common"
     tasks_from: "debian/packages/docker"
-  vars:
-    user: "{{ lookup('env', 'USER') }}"
 
 - name: "Setting up XRDP"
   ansible.builtin.import_role:
@@ -51,5 +49,3 @@
   ansible.builtin.import_role:
     name: "common"
     tasks_from: "debian/packages/virtualbox"
-  vars:
-    user: "{{ lookup('env', 'USER') }}"
