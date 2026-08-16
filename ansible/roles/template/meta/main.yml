@@ -1,5 +1,7 @@
 ---
 galaxy_info:
+  role_name: template
+  namespace: lsampaioweb
   company: thecodemaster.net
   author: Luciano Sampaio
   description: Setup Ubuntu image with default settings.
