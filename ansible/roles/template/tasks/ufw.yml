@@ -6,7 +6,7 @@
     line: "IPV6=no"
     state: "present"
 
-- name: "Ensure the ufw.log file exists"
+- name: "Ensuring the ufw.log file exists"
   ansible.builtin.file:
     path: "/var/log/ufw.log"
     state: "touch"
