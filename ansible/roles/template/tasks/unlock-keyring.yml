@@ -11,7 +11,7 @@
     - { path: "/etc/pam.d/sshd", value: "auth optional pam_gnome_keyring.so", before: 'authorization.$' }
     - { path: "/etc/pam.d/common-auth", value: "auth    optional                        pam_gnome_keyring.so",
         before: '^# end of pam-auth' }
-  notify: "Start gnome-keyring-daemon"
+  notify: "Starting gnome-keyring-daemon"
 
 - name: "Adding gnome-keyring PAM configuration for session"
   ansible.builtin.lineinfile:
@@ -25,4 +25,4 @@
     - { path: "/etc/pam.d/sshd", value: "session optional pam_gnome_keyring.so auto_start", before: 'password updating.$' }
     - { path: "/etc/pam.d/common-session", value: "session optional        pam_gnome_keyring.so auto_start",
         before: '^# end of pam-auth' }
-  notify: "Start gnome-keyring-daemon"
+  notify: "Starting gnome-keyring-daemon"
